@@ -156,6 +156,7 @@ header .menu{
     padding: 0 50px;
     box-sizing: border-box;
     overflow: auto;
+    justify-content: center;
 }
 
 .thumbnail::-webkit-scrollbar{
@@ -177,7 +178,7 @@ header .menu{
     border-radius: 10px;
 }
 
-.thumbnail .item.item.active{
+.thumbnail .item.active{
     filter: brightness(1.5);
 }
 
