@@ -125,16 +125,11 @@ header .menu{
     position: relative;
     top: 40%;
     z-index: 100;
-}
-.arrows #prev{
-    position: inherit;
-    left:5vw
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vh
 }
 
-.arrows #next{
-    position: inherit;
-    left: 90vw
-}
 .arrows button{
     background-color: #eee5;
     border: none;
