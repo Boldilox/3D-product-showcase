@@ -7,7 +7,7 @@ body{
 }
 
 svg{
-    width: 25px;
+    width: 2vw;
 }
 
 header{
@@ -122,12 +122,19 @@ header .menu{
 }
 
 .arrows{
-    position: absolute;
-    top: 30%;
-    right: 50px;
+    position: relative;
+    top: 40%;
     z-index: 100;
 }
+.arrows #prev{
+    position: inherit;
+    left:5vw
+}
 
+.arrows #next{
+    position: inherit;
+    left: 90vw
+}
 .arrows button{
     background-color: #eee5;
     border: none;
@@ -146,8 +153,8 @@ header .menu{
 }
 
 .thumbnail{
-    position: absolute;
-    bottom: 50px;
+    position: inherit;
+    top: 550px;
     z-index: 11;
     display: flex;
     gap: 10px;
@@ -197,4 +204,6 @@ header .menu{
     .arrows{
         top:10%; 
     }
+    
 }
+
