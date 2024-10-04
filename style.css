@@ -149,7 +149,7 @@ header .menu{
 
 .thumbnail{
     position: inherit;
-    top: 550px;
+    top: 65vh;
     z-index: 11;
     display: flex;
     gap: 10px;
