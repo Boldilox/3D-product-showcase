@@ -28,7 +28,7 @@ prev.onclick= function(){
 let refreshInterval = setInterval(() => {
     next.click();
 
-}, 3000 ) //3000 means 3s
+}, 5000 ) //3000 means 3s
 function showSlider(){
     //removing old item
     console.log("Oonga Boonga")
