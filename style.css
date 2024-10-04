@@ -22,7 +22,6 @@ header{
     align-items: center;
     position: relative;
     z-index: 100; /*over here the higher z index will be above everything else*/
-    
 }
 
 header .logo{
@@ -192,15 +191,6 @@ header .menu{
     .thumbnail{
         justify-content: start;
     }
-    .slider .list .item .content h2{
-        font-size: 60px;
-    }
-    .arrows{
-        top:10%; 
-    }
-}
-
-@media screen and (max-height: 695.2px) {
     .slider .list .item .content h2{
         font-size: 60px;
     }
