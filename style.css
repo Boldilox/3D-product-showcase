@@ -57,6 +57,7 @@ header .menu{
     width:100%;
     height: 100%;
     object-fit: cover; /*done so that image is not distorted*/
+
 }
 
 .slider .list .item::after{ /*after element declaration*/
@@ -159,7 +160,11 @@ header .menu{
     box-sizing: border-box;
     overflow: auto;
     justify-content: center;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
 }
+
+
 
 .thumbnail::-webkit-scrollbar{
     width: 0;
@@ -171,6 +176,12 @@ header .menu{
     filter: brightness(.5);
     transition: .5s;
     flex-shrink: 0; /*used to deny mobile shrinking*/
+    
+    filter: brightness(0.4);
+}
+
+.thumbnail .item:hover{
+    filter: brightness(1);
 }
 
 .thumbnail .item img{
