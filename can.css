@@ -25,6 +25,11 @@ header .logo{
     font-weight: bold;
 }
 
+.menu li a{
+    text-decoration: none; 
+    color: inherit;
+}
+
 header .menu{
     padding: 0;
     margin: 0;
