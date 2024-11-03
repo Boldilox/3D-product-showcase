@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+.bottle-page body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+.bottle-page header {
+    color: #eee;
+    width: 1200px;
+    max-width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.bottle-page header .logo {
+    font-weight: bold;
+}
+
+.bottle-page .menu li a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bottle-page header .menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-weight: 500;
+}
+
+.bottle-page .carousel {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    margin-top: -50px;
+}
+
+.bottle-page .list {
+    width: 100%;
+    height: 100%;
+}
+
+.bottle-page .item {
+    width: 100%;
+    height: 100%;
+    background-color: var(--background);
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    display: none;
+}
+
+.bottle-page .item img.bottle {
+    width: 80%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 15;
+    pointer-events: none;
+}
+
+.bottle-page .item .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 10rem;
+    color: #eee;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.bottle-page .item.active {
+    display: block;
+}
+
+.bottle-page #prev,
+.bottle-page #next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #eee5;
+    color: #eee;
+    font-size: x-large;
+    font-family: monospace;
+    cursor: pointer;
+    z-index: 15;
+}
+
+.bottle-page #prev {
+    left: 20px;
+}
+
+.bottle-page #next {
+    right: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        top: 100%;
+        opacity: 0;
+    }
+    to {
+        top: 50%;
+        opacity: 1;
+    }
+}
+
+@keyframes slideOut {
+    from {
+        top: 50%;
+        opacity: 1;
+    }
+    to {
+        top: -100%;
+        opacity: 0;
+    }
+}
+
+.bottle-page .item.active img.bottle {
+    animation: slideIn 0.5s ease-in-out 1;
+}
+
+.bottle-page .item.hidden img.bottle {
+    animation: slideOut 0.8s ease-in-out 1;
+}
+
+@media screen and (max-width: 768px) {
+    .bottle-page .item .content {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    .bottle-page .item img.bottle {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
