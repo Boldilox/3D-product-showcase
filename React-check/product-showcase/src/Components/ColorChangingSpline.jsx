@@ -1,10 +1,12 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import Spline from '@splinetool/react-spline';
 
 export default function ColorChangingSpline() {
-  const appRef = useRef(null);
+  const [app, setApp] = useState(null);
 
   useEffect(() => {
+    if (!app) return;
+
     // Initialize color states
     let currentColorIndex = 0;
 
@@ -18,11 +20,11 @@ export default function ColorChangingSpline() {
     // Function to apply color based on the current index
     function applyColor() {
       const color = colors[currentColorIndex];
-      console.log('Applying color:', color); // Log the color being applied
+      console.log('Applying color:', color);
 
-      // Check if `setVariables` is available on the Spline instance
-      if (appRef.current?.setVariables) {
-        appRef.current.setVariables(color);
+      // Try to apply color if setVariables is available
+      if (app.setVariables) {
+        app.setVariables(color);
       } else {
         console.warn('setVariables method is not available on the Spline instance.');
       }
@@ -34,8 +36,8 @@ export default function ColorChangingSpline() {
     // Apply the first color immediately on load
     const initialColor = colors[0];
     console.log('Initial color applied:', initialColor);
-    if (appRef.current?.setVariables) {
-      appRef.current.setVariables(initialColor);
+    if (app.setVariables) {
+      app.setVariables(initialColor);
     }
 
     // Change color every 5 seconds
@@ -43,11 +45,14 @@ export default function ColorChangingSpline() {
 
     // Clear interval on component unmount
     return () => clearInterval(colorInterval);
-  }, []);
+  }, [app]);
 
   return (
     <div>
-      <Spline scene="https://prod.spline.design/i04iXPXzyN8Qo939/scene.splinecode" ref={appRef} />
+      <Spline
+        scene="https://prod.spline.design/i04iXPXzyN8Qo939/scene.splinecode"
+        onLoad={(splineApp) => setApp(splineApp)}
+      />
     </div>
   );
 }
