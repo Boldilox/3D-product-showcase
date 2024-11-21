@@ -1,209 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
 
- body {
-    
-    font-family: Poppins;
+body {
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-}
-
-.bottle-page header {
-    background:transparent;
-    color: #eee;
-    width: 1200px;
-    max-width: 90%;
-    margin: auto;
-    display: grid;
-    grid-template-columns: 50px 1fr 50px;
-    grid-template-rows: 50px;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 100;
-}
-
-.bottle-page header .logo {
-    font-weight: bold;
-}
-
-.bottle-page .menu li a {
-    text-decoration: none;
-    color: inherit;
-}
-
-.bottle-page header .menu {
     padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-weight: 500;
+    overflow-x: hidden;
 }
 
-
-
-.bottle-page .list {
-    width: 100%;
-    height: 100%;
-}
-
-.bottle-page .item {
-    width: 100%;
-    height: 100%;
-    background-color: var(--background);
-    position: absolute;
+.spline-container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
     top: 0;
     left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
-    display: none;
-}
-
-.bottle-page .item img.bottle {
-    width: 80%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 15;
-    pointer-events: none;
-}
-
-.bottle-page .item .content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-size: 10rem;
-    color: #eee;
-    font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    text-transform: uppercase;
-    white-space: nowrap;
-}
-
-.bottle-page .item.active {
-    display: block;
-}
-
-.bottle-page .item.hidden {
-    display: block;
-    pointer-events: none;
-    background-color: transparent;
     z-index: 1;
 }
 
-.bottle-page #prev,
-.bottle-page #next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid #eee9;
-    background-color: #eee5;
-    color: #eee;
-    font-size: x-large;
-    font-family: monospace;
-    cursor: pointer;
-    z-index: 15;
-}
-
-.bottle-page #prev {
-    left: 20px;
-}
-
-.bottle-page #next {
-    right: 20px;
-}
-
-@keyframes toActive {
-    from {
-        top: 100%;
-        opacity: 0;
-    }
-}
-
-@keyframes toOut {
-    from {
-        top: 50%;
-        opacity: 1;
-    }
-}
-
-.bottle-page .item.active img.bottle {
-    animation: toActive 0.5s ease-in-out 1;
-}
-
-.bottle-page .item.hidden img.bottle {
-    animation: toOut 0.8s ease-in-out 1;
-    top: -100%;
-    opacity: 0;
-}
-
-.bottle-page .item.active .content {
-    animation: toActive 0.8s ease-in-out 1;
-}
-
-.bottle-page .item.hidden .content {
-    opacity: 0;
-}
-
-.bottle-page .carousel.right .item.active img.bottle {
-    animation: toActivePrev 0.5s ease-in-out 1;
-}
-
-.bottle-page .carousel.right .item.hidden img.bottle {
-    animation: toOut 0.8s ease-in-out 1;
-    top: 100%;
-    opacity: 0;
-}
-
-.bottle-page .carousel.right .item.active .content {
-    animation: toActivePrev 0.8s ease-in-out 1;
-}
-
-@keyframes toActivePrev {
-    from {
-        top: 0;
-        opacity: 0;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .bottle-page .item .content {
-        transform: translate(-50%, -50%) scale(.5);
-    }
-
-    .bottle-page .item img.bottle {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
-
-/* Spline Container Styles */
-.spline-container {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+.spline-container canvas {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .spline-container #prev,
 .spline-container #next {
-    position: absolute;
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background-color: transparent;
-    border: 1px solid #eee9;
-    background-color: #eee5;
+    background-color: rgba(238, 238, 238, 0.3);
+    border: 1px solid rgba(238, 238, 238, 0.1);
     color: #eee;
     font-size: x-large;
     font-family: monospace;
@@ -212,12 +44,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .spline-container #prev:hover,
 .spline-container #next:hover {
-    background-color: #eee8;
+    background-color: rgba(238, 238, 238, 0.5);
+    transform: translateY(-50%) scale(1.1);
 }
 
 .spline-container #prev {
@@ -226,4 +59,62 @@
 
 .spline-container #next {
     right: 20px;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1440px) {
+    .spline-container {
+        scale: 0.95;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .spline-container {
+        scale: 0.9;
+    }
+
+    .spline-container #prev,
+    .spline-container #next {
+        width: 40px;
+        height: 40px;
+        font-size: large;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .spline-container {
+        scale: 0.8;
+    }
+
+    .spline-container #prev,
+    .spline-container #next {
+        width: 35px;
+        height: 35px;
+        font-size: medium;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .spline-container {
+        scale: 0.7;
+    }
+
+    .spline-container #prev,
+    .spline-container #next {
+        width: 30px;
+        height: 30px;
+        font-size: small;
+        left: 10px;
+        right: 10px;
+    }
+}
+
+/* Additional Touch/Mobile Improvements */
+@media (hover: none) and (pointer: coarse) {
+    .spline-container #prev,
+    .spline-container #next {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(238, 238, 238, 0.5);
+    }
 }
