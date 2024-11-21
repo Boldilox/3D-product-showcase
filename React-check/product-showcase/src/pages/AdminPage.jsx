@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Admin.css';
+
 const AdminPage = () => {
   const [products, setProducts] = useState([]);
   const [editingProductId, setEditingProductId] = useState(null);
@@ -95,7 +96,7 @@ const AdminPage = () => {
   };
 
   return (
-    <div>
+    <div className='admin-page'>
       <h2>Admin Page</h2>
 
       <div>
