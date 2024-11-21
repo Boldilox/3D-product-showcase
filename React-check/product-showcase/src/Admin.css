@@ -25,7 +25,15 @@
   }
   
   .admin-page input[type="text"],
-  .admin-page input[type="file"],
+  .admin-page input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
   .admin-page textarea {
     width: 100%;
     padding: 10px;
@@ -33,6 +41,9 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    height: 100px;
+    font-family: inherit;
+    font-size: 16px;
   }
   
   .admin-page button {
@@ -60,6 +71,8 @@
     justify-content: space-between;
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    background-color: #fff; /* Add this line to set the background color of list items */
+    color: #333; /* Add this line to set the text color of list items */
   }
   
   .admin-page img {
