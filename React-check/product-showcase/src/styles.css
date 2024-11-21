@@ -12,7 +12,7 @@ svg{
 
 
 header{
-   
+    background: transparent;
     width: 1200px;
     max-width: 90%;  /* doing this so the scroll doesnt come*/
     margin: auto; /*putting header to the middle*/

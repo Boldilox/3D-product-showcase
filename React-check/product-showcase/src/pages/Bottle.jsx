@@ -6,8 +6,9 @@ import '../bottleStyle.css';
 const BottlePage = () => {
   return (
     <div className="bottle-page">
-      <Header />
       <ColorChangingSpline />
+      <Header />
+      
     </div>
   );
 };

@@ -37,7 +37,7 @@ const Slider = () => {
             }}
           >
             <div className="content">
-              <p>Design</p>
+              <p>POWER THROUGH!</p>
               <h2>{item.name}</h2>
               <p>{item.description}</p>
             </div>
