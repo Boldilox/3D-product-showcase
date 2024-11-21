@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import '../Admin.css';
 const AdminPage = () => {
   const [products, setProducts] = useState([]);
   const [editingProductId, setEditingProductId] = useState(null);
