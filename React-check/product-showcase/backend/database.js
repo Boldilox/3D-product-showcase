@@ -23,7 +23,7 @@ db.serialize(() => {
         "Bottle",
         "Discover a 500ml burst of refreshment that energizes you with a variety of flavors. Visit the bottle tab to explore our exciting flavor collection!",
         "/uploads/Bottlebg.png", //these are picture paths(this is background)
-        "/uploads/Bottletn.png"  //9this is thumbnail)
+        "/uploads/Bottletn.png"  //(this is thumbnail)
       ]);
       db.run("INSERT INTO products (name, description, sliderImageUrl, thumbnailImageUrl) VALUES (?, ?, ?, ?)", [
         "Can",
